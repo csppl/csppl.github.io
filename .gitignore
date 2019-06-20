@@ -1,2 +1,4 @@
 node_modules
 .idea
+darkflow-slave
+__pycache__

@@ -1,6 +1,16 @@
 from django.shortcuts import render, redirect
 from .crawl import browser_on, href_crawler, image_scrapping, img_download
 from .models import Post
+from darkflow.net.build import TFNet
+
+# import os
+# print(os.getcwd())
+
+# YOLO MODEL LOAD
+options = {"model": "cfg/size-yolo.cfg",
+           "load": 22000}  # 최신 checkpoint를 load하려면 -1
+tfnet = TFNet(options)
+tfnet.load_from_ckpt()
 
 
 # Create your views here.
