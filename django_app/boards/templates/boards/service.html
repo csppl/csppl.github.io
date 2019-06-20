@@ -1,0 +1,20 @@
+{% extends 'boards/base.html' %} <!-- layout을 상속받는다! -->
+
+{% block content %}
+
+{% if posts %}
+    {% for post in posts %}
+
+        <div class="row">
+                <img src="{{ post.thumbnail }}" alt="" width="200" height="200" class="img-thumbnail">
+            <div class="col-sm-3">
+                <p>{{ post.title }}</p>
+                <p>price: {{ post.price }} 원</p>
+                <p class="text-truncate">link: {{ post.link }}</p>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

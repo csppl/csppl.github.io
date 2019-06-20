@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% bootstrap_css %}
+
+    <style>
+        .hero-image {
+          background: url("{% static 'boards/images/fabric-3506846_1920.jpg' %}") no-repeat center;
+          background-size: cover;
+          height: 500px;
+          position: relative;
+          opacity: 0.9;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 2px black;
+            color:white;
+        }
+
+    </style>
+
+    <title>CSPpl</title>
+</head>
+<body>
+
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>옷찾사</h1>
+        <h3>옷을 찾아주는 사람들</h3>
+        <form action="{% url 'boards:service' %}">
+            {% if query %}
+            <input type="text" value="{{ query }}" name="query">
+            {% else %}
+            <input type="text" name="query">
+            {% endif %}
+            <input type="submit" value="검색">
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <main>
+        <header>
+        </header>
+
+        <section>
+            <!-- 앞으로 다른 페이지들은 이 content라는 block안에 호출이 된다. -->
+            {% block content %}
+            {% endblock %}
+            <!-- 참고로 content는 걍 이름이니 다르게 지정해줘도 된다. -->
+        </section>
+
+        <footer>
+            <p>Copyright 2019</p>
+        </footer>
+    </main>
+</div>
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>
