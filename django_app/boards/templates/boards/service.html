@@ -1,20 +1,206 @@
 {% extends 'boards/base.html' %} <!-- layout을 상속받는다! -->
+{% load bootstrap4 %}
+{% load static %}
 
 {% block content %}
 
 {% if posts %}
-    {% for post in posts %}
+{% for post in posts %}
+{% if post.chart_set.all %}
 
-        <div class="row">
-                <img src="{{ post.thumbnail }}" alt="" width="200" height="200" class="img-thumbnail">
-            <div class="col-sm-3">
-                <p>{{ post.title }}</p>
-                <p>price: {{ post.price }} 원</p>
-                <p class="text-truncate">link: {{ post.link }}</p>
+<div class="row">
+    <div class="col-sm-3"><img src="{{ post.thumbnail }}" alt="" width="200" height="200" class="img-thumbnail"></div>
+    <div class="col-sm-3">
+        <p>{{ post.title }}</p>
+        <p>price: {{ post.price }} 원</p>
+        <a href="{{ post.link }}" target="_blank">[LINK]</a>
+    </div>
+
+    <div class="col-sm-6">
+        <div id="{{ post.id }}" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <center>
+                        <img class="d-block w-50" src="{% static 'boards/images/LOGO_grey.png' %}" alt="First slide" style="opacity:0.3">
+                    </center>
+                </div>
+
+                {% for chart in post.chart_set.all %}
+                <div class="carousel-item">
+                    <a href="{% static chart.img %}" data-toggle="modal" data-target="#m{{ chart.id }}">
+
+                          <img class="d-block w-100" src="{% static chart.img %}" alt="charts">
+
+                    </a>
+                </div>
+
+                <!-- Modal -->
+                <!-- https://getbootstrap.com/docs/4.3/components/modal/ -->
+                <div class="modal fade" id="m{{ chart.id }}" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width: 65vw;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Size Table</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body d-flex justify-content-center img-magnifier-container mag1">
+
+                                <img data-toggle="magnify" class="img-responsive img-rounded center-block" style="max-width: 60vw;" src="{% static chart.img %}" alt="charts" id="mag{{ chart.id }}">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
             </div>
+            <a class="carousel-control-prev" href="#{{ post.id }}" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#{{ post.id }}" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
-    {% endfor %}
+    </div>
+</div>
+{% bootstrap_javascript jquery='full' %}
+
+<!-- http://www.prepbootstrap.com/bootstrap-template/image-magnification -->
+<script>
+        !function ($) {
+
+        "use strict"; // jshint ;_;
+
+        /* MAGNIFY PUBLIC CLASS DEFINITION
+         * =============================== */
+
+        var Magnify = function (element, options) {
+            this.init('magnify', element, options)
+        }
+
+        Magnify.prototype = {
+
+            constructor: Magnify
+
+            , init: function (type, element, options) {
+                var event = 'mousemove'
+                    , eventOut = 'mouseleave';
+
+                this.type = type
+                this.$element = $(element)
+                this.options = this.getOptions(options)
+                this.nativeWidth = 0
+                this.nativeHeight = 0
+
+                this.$element.wrap('<div class="magnify" >');
+                this.$element.parent('.magnify').append('<div class="magnify-large" >');
+                this.$element.siblings(".magnify-large").css("background", "url('" + this.$element.attr("src") + "') no-repeat");
+
+                this.$element.parent('.magnify').on(event + '.' + this.type, $.proxy(this.check, this));
+                this.$element.parent('.magnify').on(eventOut + '.' + this.type, $.proxy(this.check, this));
+            }
+
+            , getOptions: function (options) {
+                options = $.extend({}, $.fn[this.type].defaults, options, this.$element.data())
+
+                if (options.delay && typeof options.delay == 'number') {
+                    options.delay = {
+                        show: options.delay
+                        , hide: options.delay
+                    }
+                }
+
+                return options
+            }
+
+            , check: function (e) {
+                var container = $(e.currentTarget);
+                var self = container.children('img');
+                var mag = container.children(".magnify-large");
+
+                // Get the native dimensions of the image
+                if (!this.nativeWidth && !this.nativeHeight) {
+                    var image = new Image();
+                    image.src = self.attr("src");
+
+                    this.nativeWidth = image.width;
+                    this.nativeHeight = image.height;
+
+                } else {
+
+                    var magnifyOffset = container.offset();
+                    var mx = e.pageX - magnifyOffset.left;
+                    var my = e.pageY - magnifyOffset.top;
+
+                    if (mx < container.width() && my < container.height() && mx > 0 && my > 0) {
+                        mag.fadeIn(100);
+                    } else {
+                        mag.fadeOut(100);
+                    }
+
+                    if (mag.is(":visible")) {
+                        var rx = Math.round(mx / container.width() * this.nativeWidth - mag.width() / 2) * -1;
+                        var ry = Math.round(my / container.height() * this.nativeHeight - mag.height() / 2) * -1;
+                        var bgp = rx + "px " + ry + "px";
+
+                        var px = mx - mag.width() / 2;
+                        var py = my - mag.height() / 2;
+
+                        mag.css({ left: px, top: py, backgroundPosition: bgp });
+                    }
+                }
+
+            }
+        }
+
+
+        /* MAGNIFY PLUGIN DEFINITION
+         * ========================= */
+
+        $.fn.magnify = function (option) {
+            return this.each(function () {
+                var $this = $(this)
+                    , data = $this.data('magnify')
+                    , options = typeof option == 'object' && option
+                if (!data) $this.data('tooltip', (data = new Magnify(this, options)))
+                if (typeof option == 'string') data[option]()
+            })
+        }
+
+        $.fn.magnify.Constructor = Magnify
+
+        $.fn.magnify.defaults = {
+            delay: 0
+        }
+
+
+        /* MAGNIFY DATA-API
+         * ================ */
+
+        $(window).on('load', function () {
+            $('[data-toggle="magnify"]').each(function () {
+                var $mag = $(this);
+                $mag.magnify()
+            })
+        })
+
+    }(window.jQuery);
+</script>
+
+
+{% endif %}
+{% endfor %}
 {% endif %}
 
 {% endblock %}

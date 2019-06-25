@@ -25,9 +25,89 @@
             color:white;
         }
 
+    .carousel-item {
+        max-height: 200px;
+        min-height: 200px;
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        filter: invert(100%);
+    }
+
+    /* Pagination links */
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+    }
+
+    /* Style the active/current link */
+    .pagination a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    /* Add a grey background color on mouse-over */
+    .pagination a:hover:not(.active) {background-color: #ddd;}
+
+    /* mag */
+
+        .mag {
+        width: 450px;
+        margin: 0 auto;
+        float: none;
+    }
+
+        .mag img {
+            max-width: 100%;
+        }
+
+    .mag1 {
+        width: 120px;
+        margin: 0 auto;
+        float: none;
+    }
+
+        .mag1 img {
+            max-width: 100%;
+        }
+
+    .mag2 {
+        width: 900px;
+        margin: 0 auto;
+        float: none;
+    }
+
+        .mag2 img {
+            max-width: 100%;
+        }
+
+    .magnify {
+        position: relative;
+        cursor: none;
+    }
+
+    .magnify-large {
+        position: absolute;
+        display: none;
+        width: 500px;
+        height: 500px;
+        -webkit-box-shadow: 0 0 0 7px rgba(204, 204, 204, 0.55), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.55), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.55), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+    }
+
     </style>
 
     <title>CSPpl</title>
+
+
+
 </head>
 <body>
 
@@ -56,6 +136,19 @@
             {% block content %}
             {% endblock %}
             <!-- 참고로 content는 걍 이름이니 다르게 지정해줘도 된다. -->
+
+
+            <div class="pagination d-flex justify-content-center">
+              <a href="#">&laquo;</a>
+              <a href="#" class="active">1</a>
+              <a  href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">&raquo;</a>
+            </div>
+
         </section>
 
         <footer>
@@ -64,5 +157,8 @@
     </main>
 </div>
 {% bootstrap_javascript jquery='full' %}
+
+
+
 </body>
 </html>

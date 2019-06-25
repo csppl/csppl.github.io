@@ -6,6 +6,7 @@ import time
 import sys
 import requests
 import shutil
+import os
 
 # 참고: https://pypi.org/project/selenium/
 
@@ -81,11 +82,10 @@ def href_crawler(browser, category, page):
 
 
 # 이미지 스크린샷
-def image_scrapping(href_list, save_path):
-    over_weight = 0
+def image_scrapping(href_list, filename):
     browser = browser_on()
     for idx, href in enumerate(href_list):
-        print(f'{idx + 1}/{len(href_list)} {save_path} screent shot...')
+        print(f'{idx + 1}/{len(href_list)} {filename} screent shot...')
         try:
             if idx % 500 == 0:
                 browser.quit()
@@ -97,12 +97,7 @@ def image_scrapping(href_list, save_path):
             # from here http://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript
             js = 'return Math.max( document.body.scrollHeight, document.body.offsetHeight,  document.documentElement.clientHeight,  document.documentElement.scrollHeight,  document.documentElement.offsetHeight);'
             scrollheight = browser.execute_script(js)
-
-            if scrollheight > 20000:
-                print(f'scrollheight over: {scrollheight} !!')
-                over_weight += 1
-                print(f'over_weight_count : {over_weight}')
-                continue
+            scrollheight = min(60000, scrollheight)
             scale = 0.8
             browser.execute_script(f'document.body.style.MozTransform = "scale({scale})";')
             time.sleep(2)
@@ -110,6 +105,7 @@ def image_scrapping(href_list, save_path):
             slices = []
             offset = 0
             while offset < scrollheight:
+                print(offset)
                 browser.execute_script(f"window.scrollTo(0, {offset});")
                 time.sleep(1)
                 img = Image.open(BytesIO(browser.get_screenshot_as_png()))
@@ -118,18 +114,26 @@ def image_scrapping(href_list, save_path):
                 # print (f'{offset} / {scrollheight}')
                 time.sleep(1)
 
+            # PILLOW
+            print("PILLOW FIGHT!")
             screenshot = Image.new('RGB', (slices[0].size[0], scrollheight))
             offset = 0
             for img in slices:
                 screenshot.paste(img, (0, offset))
                 offset += img.size[1]
-            screenshot.save(f'./img/{save_path}/screen_shot_{idx}.png')
+
+            try:
+                screenshot.save(os.getcwd() + f'{filename}')
+                print(f"{filename} saved!")
+            except Exception as e:
+                print(e)
             time.sleep(3)
         except:
             print('error!')
             continue
 
 
+# Thumbnail download code
 def img_download(img_list):
     for idx, img_ in enumerate(img_list):
         r = requests.get(img_, stream=True, headers={'User-agent': 'Mozilla/5.0'})
@@ -141,3 +145,5 @@ def img_download(img_list):
                 shutil.copyfileobj(r.raw, f)
         else:
             print(r.status_code)
+
+
