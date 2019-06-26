@@ -86,10 +86,8 @@
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="흐름도">
       <div class="w-100">
         <h2 class="mb-5">흐름도</h2>
-
-
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <img src="img/t2.png" alt="" width="50%" >
+          <img class="mb-2" src="img/flow_img.png" alt="" width="50%" >
         </div>
       </div>
 
@@ -110,8 +108,8 @@
                 <li>특정 카테고리(맨투맨)의 검색결과 리스트를 네이버 쇼핑 탭에서 가지고옴</li>
                 <li>Selenium을 통해 각 쇼핑몰 페이지의 풀 스크린샷을 찍음</li>
                 <li>OpenCV를 활용해 split되는 부분을 예측해 잘라냄</li>
-                <img src="img/crop_img1.png" alt="" width="90%" >
               </ul>
+              <img class="mb-2" src="img/crop_img1.png" alt="" width="90%" >
             </div>
           </div>
         </div>
@@ -123,13 +121,18 @@
               <ul>
                 <li>EAST(An Efficient and Accurate Scene Text Detector)라는 Text detection model 활용</li>
                 <li>EAST로 글자영역을 검출하고 Tesseract-OCR로 글자를 인식해 사이즈 테이블로 예측되는 부분 검출</li>
-                <img src="img/east_img1.png" alt="" width="90%" >
+                <img class="mb-2" src="img/east_img1.png" alt="" width="90%" >
                 <li>좀 더 일반화된 모델을 사용하기 위해 YOLO(You Only Look Once)라는 obejct detection model 사용</li>
                   <ul>
                     <li>YOLO의 tensorflow버전인 Darkflow활용</li>
                     <li>YOLOv2 608x608을 초기 weight로 잡아두고 활용</li>
-                    <li>Selenium통해 이미지 수집</li>
+                    <li>Selenium통해 이미지 수집(약 3만 장의 스플릿 된 이미지)</li>
+                    <li>labelimg 통해 약 3500개의 테이블 labeling</li>
+                    <li>학습된 모델 통해 사이즈 테이블 검출</li>
+                    <li>부분적으로 잘리게되는 테이블도 존재 - OpenCV활용해 영역 검출</li>
+                    <li>좀 더 확정적인 테이블 검출</li>
                   </ul>
+                <img class="mb-2" src="img/yolo_img.png" alt="" width="90%" >
               </ul>
             <div>
             </div>
@@ -142,10 +145,10 @@
             <div class="subheading mb-3">OpenCV & CRNN</div>
             <div>
               <ul>
-                <li>찾아낸 사이즈테이블에 대해 OpenCV를 활용해 글자영역을 검출</li>
-                <img src="img/contour_img1.png" alt="" width="90%" >
-                <li>검출된 글자영역에 대한 글자를 인식하기 위한 CRNN(CNN+RNN)모델구축</li>
+                <li>찾아낸 사이즈테이블에 대해 OpenCV Canny, morphologyEx, findContours 활용</li>
+                <li>글자부분을 검출하고 Tesseract-OCR 활용해 글자 인식</li>
               </ul>
+              <img class="mb-2" src="img/opencv_img.png" alt="" width="90%" >
             </div>
           </div>
 
