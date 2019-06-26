@@ -46,3 +46,13 @@ ckpt/*
 
 #pytest cache
 .cache/
+
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
+
+# 환경 설정 관련 파일
+.env
