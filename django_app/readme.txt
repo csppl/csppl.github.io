@@ -1,4 +1,7 @@
-﻿HEROKU에 웹 deploy
+﻿ngrok http 8000
+
+
+HEROKU에 웹 deploy
 
 1. 웹어플이 github에 올라가게 해줌
 2. gitignore에 추가
