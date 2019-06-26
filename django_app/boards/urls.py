@@ -9,4 +9,5 @@ urlpatterns = [
     path('manage/', views.manage, name='manage'),
     path('service/', views.service, name='service'),
     path('extract/<int:post_pk>/', views.extract, name='extract'),
+    path('detect/', views.detect, name='detect'),
 ]

@@ -21,3 +21,9 @@ class Post(models.Model):
 class Chart(models.Model):
     img = models.TextField()
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+
+class Size(models.Model):
+    category = models.TextField()
+    size = models.TextField()
+    chart = models.ForeignKey(Chart, on_delete=models.CASCADE)

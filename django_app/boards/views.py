@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .crawl import browser_on, href_crawler, image_scrapping
-from .models import Post, Chart
+from .models import Post, Chart, Size
 from darkflow.net.build import TFNet
 from .tablefinder import crop_col_img, split_img, yolo_split, find_table, img_concat
 import hashlib
 import cv2
 import os
+from .textdetect import black_find_contour, white_find_contour, \
+    split_row, category_row, text_recognition, find_column, text_check
 
 
 # import os
@@ -153,3 +155,60 @@ def extract(request, post_pk):
     #
     # post.save()
     return redirect('boards:index')
+
+
+def detect(request):
+    charts = Chart.objects.all()
+    for chart in charts:
+        img = os.getcwd() + '/boards/static/' + chart.img
+        print(img)
+        img = cv2.imread(img)
+
+        table_img_list = [img]
+        size_table = []
+        for table in table_img_list:
+            try:
+                # 영역치고
+                black_rect = black_find_contour(table)
+                white_rect = white_find_contour(table)
+                # 행으로 분리하고
+                black_row = split_row(black_rect)
+                white_row = split_row(white_rect)
+                # 분리된 행 카테고리화 하고
+                black_rows_list = category_row(black_row)
+                white_rows_list = category_row(white_row)
+                # 텍스트 인식하고
+                black_text = text_recognition(black_rows_list)
+                white_text = text_recognition(white_rows_list)
+                # 체크 하고
+                text = text_check(black_text, white_text)
+                size_table.append(text)
+            except Exception as e:
+                print(f'error : {e}')
+                continue
+
+        print("tables : ", len(size_table))
+        for table in size_table:
+            print("SIZE EXIST? : ", table.size_bool)
+            if table.size_bool:  # if True
+                print("arm : ", table.arm_size)  # list
+                print("shoulder : ", table.sh_size)  # list
+
+                for arm in table.arm_size:
+                    size = Size()
+                    size.category = "arm"
+                    size.size = arm
+                    size.chart_id = chart.id
+                    size.save()
+
+                for shoulder in table.sh_size:
+                    size = Size()
+                    size.category = "shoulder"
+                    size.size = shoulder
+                    size.chart_id = chart.id
+                    size.save()
+            else:
+                print("NO WAY JOSE")
+
+    return render(request, 'boards/index.html')
+
