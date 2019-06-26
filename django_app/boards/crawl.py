@@ -82,14 +82,10 @@ def href_crawler(browser, category, page):
 
 
 # 이미지 스크린샷
-def image_scrapping(href_list, filename):
-    browser = browser_on()
+def image_scrapping(href_list, filename, browser):
     for idx, href in enumerate(href_list):
         print(f'{idx + 1}/{len(href_list)} {filename} screent shot...')
         try:
-            if idx % 500 == 0:
-                browser.quit()
-                browser = browser_on()
             browser.get(href)
             browser.implicitly_wait(15)
             time.sleep(7)

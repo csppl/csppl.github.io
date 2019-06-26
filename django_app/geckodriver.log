@@ -5406,3 +5406,119 @@ console.error: BroadcastService:
 A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
 WARNING: At least one completion condition is taking too long to complete. Conditions: [{"name":"SessionStore: flushing all windows","state":{"total":1,"current":0},"filename":"resource:///modules/sessionstore/SessionStore.jsm","lineNumber":1611,"stack":["resource:///modules/sessionstore/SessionStore.jsm:ssi_onQuitApplicationGranted:1611","resource:///modules/sessionstore/SessionStore.jsm:ssi_observe:778","resource:///modules/ContentCrashHandlers.jsm:observe:152"]}] Barrier: quit-application-granted
 [Parent 55604, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188
+1561449109275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "disable-gpu" "user-agent=Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko" "-foreground" "-no-remote" "-profile" "C:\\Users\\student\\AppData\\Local\\Temp\\rust_mozprofile.ODH9IB0WrA5p"
+*** You are running in headless mode.
+1561449110377	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1561449110377	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1561449111784	Marionette	INFO	Listening on port 61610
+1561449111983	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+JavaScript error: http://www.fairplay142.com/shop/shopdetail.html?branduid=137788&ref=naver_open&n_media=11068&n_query=%EB%A7%A8%ED%88%AC%EB%A7%A8&n_rank=6&n_ad_group=grp-a001-02-000000004352613&n_ad=nad-a001-02-000000052941313&n_campaign_type=2&n_mall_pid=137788&NaPm=ct%3Djxbil5mg%7Cci%3D0ym00013OL5r4m_X11py%7Ctr%3Dpla%7Chk%3D551dbcd3c62cfa02dc5e6a3c5354d9cd920e73b3, line 2179: TypeError: document.getElementById(...) is null
+JavaScript warning: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=pZXRboMgFIZfoLd7DrK9Qdul2xK7Nm7JrhFPKxU55AAzvv2wumQmm65woRfg__Ef_OGwChtg9w_EDOGZeMO4MeytQsNysOhJALtYtiPUjr1C2z9HwtILt5MKDsZJ1KuLvWO3gEZCDopH6adG1mX5ok-YSMlBgHaxpQQPsi-Fq0QbmbQuFvEhbaUS9MMWzBM2yKmcIMLoquhH_xbtueZnmKhaKBSef5fQj-8q16hgKmwu2JsW4LbTYnhH6xpoCqBo-YFKIDEXqgXAhtsaXDrBkBSQyBjzGU3ZojeoU2rZhwsnzEfrH8GglfHr98dLoE-ogBbumAX5cD7f0XG1TfJxDWZ8HkDDSaZmMuNdgocn4mV8EtbeYRNaj7hiwqXYxofSKyePaLyJR3SZrGE8X2k_NpOfoKSu53rqf7LxHHoAUvdt5gs&type=js&k=7ace95c7d4524b37c3fcb1175cb396ccf1ec313d&t=1560882826, line 3387: unreachable code after return statement
+JavaScript error: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=rZJJbhsxEEUP0NrmHFRPoriMh52ziZEDFMnqbrY4mYNl3T5sIUJkA0EgqDckgeJ__J9VZHIGSd0E4oMbAxgC3pMfYGFE8hOjy0EgmSOBeLKCeEhTcBqrd9BKQnJhM8dv5DbIed28OJA3iUtZZpH-rXn-SBgs6E-qX0lp8r1UXz0KZcuNAQTeCLn2XViPzhhnb2QMwdm0lKMIyl_FSGj8GRHlgcwO4whhyV40DRtwR7u-aWrJWMM51B30tO7bYb_rCldCX-86uR8GlGwLwGnbUbbvBO-xo4KRtm33bIdAKVCohei2PWMCeZExXm_7_z7x1yeKKkcM8dqjz1wrUU3J6GIfK4lRjZbEg7KUkeo4Lil4PlWD-kB5D6twTOm_xsscXPZKmaK-B63h5HIiHKISZ7_L4U6v4suI3BP4j7-3rMSheld4XKEn81vGcNoI5w4K1-Nh-To7boyyKzADRu-sXIl2SQxpjbwLZnSFt5qxp4eVgh7HFSAR06rDa7JOKk7Ov07K-2VG5vgb&type=js&k=2e94a4afea44af75c5b3cff4a46b59685f6f2a8d&t=1561397416, line 2156: TypeError: b.attr(...) is undefined
+JavaScript warning: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=pZXRboMgFIZfoLd7DrK9Qdul2xK7Nm7JrhFPKxU55AAzvv2wumQmm65woRfg__Ef_OGwChtg9w_EDOGZeMO4MeytQsNysOhJALtYtiPUjr1C2z9HwtILt5MKDsZJ1KuLvWO3gEZCDopH6adG1mX5ok-YSMlBgHaxpQQPsi-Fq0QbmbQuFvEhbaUS9MMWzBM2yKmcIMLoquhH_xbtueZnmKhaKBSef5fQj-8q16hgKmwu2JsW4LbTYnhH6xpoCqBo-YFKIDEXqgXAhtsaXDrBkBSQyBjzGU3ZojeoU2rZhwsnzEfrH8GglfHr98dLoE-ogBbumAX5cD7f0XG1TfJxDWZ8HkDDSaZmMuNdgocn4mV8EtbeYRNaj7hiwqXYxofSKyePaLyJR3SZrGE8X2k_NpOfoKSu53rqf7LxHHoAUvdt5gs&type=js&k=7ace95c7d4524b37c3fcb1175cb396ccf1ec313d&t=1560882826, line 3387: unreachable code after return statement
+JavaScript error: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=rZJJbhsxEEUP0NrmHFRPoriMh52ziZEDFMnqbrY4mYNl3T5sIUJkA0EgqDckgeJ__J9VZHIGSd0E4oMbAxgC3pMfYGFE8hOjy0EgmSOBeLKCeEhTcBqrd9BKQnJhM8dv5DbIed28OJA3iUtZZpH-rXn-SBgs6E-qX0lp8r1UXz0KZcuNAQTeCLn2XViPzhhnb2QMwdm0lKMIyl_FSGj8GRHlgcwO4whhyV40DRtwR7u-aWrJWMM51B30tO7bYb_rCldCX-86uR8GlGwLwGnbUbbvBO-xo4KRtm33bIdAKVCohei2PWMCeZExXm_7_z7x1yeKKkcM8dqjz1wrUU3J6GIfK4lRjZbEg7KUkeo4Lil4PlWD-kB5D6twTOm_xsscXPZKmaK-B63h5HIiHKISZ7_L4U6v4suI3BP4j7-3rMSheld4XKEn81vGcNoI5w4K1-Nh-To7boyyKzADRu-sXIl2SQxpjbwLZnSFt5qxp4eVgh7HFSAR06rDa7JOKk7Ov07K-2VG5vgb&type=js&k=2e94a4afea44af75c5b3cff4a46b59685f6f2a8d&t=1561397416, line 2156: TypeError: b.attr(...) is undefined
+JavaScript warning: http://www.hyundaihmall.com/front/pda/itemPtc.do?ReferCode=429&slitmCd=2074046717&NaPm=ct%3Djxbiwbmo%7Cci%3D6ce4dd9cb84ba53b4e5cc190e1ad156ed83aa9de%7Ctr%3Dligh%7Csn%3D14%7Chk%3D1b0647190b9069ce8f4a56c5f564ba77725e14da, line 608: unreachable code after return statement
+JavaScript warning: http://www.hyundaihmall.com/front/pda/itemPtc.do?ReferCode=429&slitmCd=2074046717&NaPm=ct%3Djxbiwbmo%7Cci%3D6ce4dd9cb84ba53b4e5cc190e1ad156ed83aa9de%7Ctr%3Dligh%7Csn%3D14%7Chk%3D1b0647190b9069ce8f4a56c5f564ba77725e14da, line 644: unreachable code after return statement
+JavaScript warning: http://www.hyundaihmall.com/front/pda/itemPtc.do?ReferCode=429&slitmCd=2074046717&NaPm=ct%3Djxbiwbmo%7Cci%3D6ce4dd9cb84ba53b4e5cc190e1ad156ed83aa9de%7Ctr%3Dligh%7Csn%3D14%7Chk%3D1b0647190b9069ce8f4a56c5f564ba77725e14da, line 697: unreachable code after return statement
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery_v1.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B656888324&frm3=V2, line 1997: ReferenceError: ItemOption is not defined
+JavaScript error: http://script.auction.co.kr/Ad/DACommon.js, line 72: TypeError: data.adList[0].adItems[Math.floor(...)] is undefined
+JavaScript error: https://proxy.smartstore.naver.com/img/d3d3LmZhaXJseS5jby5rci9uZXcub3Blbm1hcmtldC9zaG9wbi5ib3R0b20uMjAxNi5hc3A/bnVtPTQ3MDYzMg==?token=bbef982425a43356b1c94351ba64e629, line 20: ReferenceError: $ is not defined
+JavaScript error: http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B567475785&frm3=V2, line 1158: ReferenceError: ItemOption is not defined
+JavaScript error: http://script.auction.co.kr/Ad/DACommon.js, line 72: TypeError: data.adList[0].adItems[Math.floor(...)] is undefined
+JavaScript error: http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B577661761&frm3=V2, line 1986: ReferenceError: ItemOption is not defined
+JavaScript error: http://script.auction.co.kr/Ad/DACommon.js, line 72: TypeError: data.adList[0].adItems[Math.floor(...)] is undefined
+1561451192909	Marionette	INFO	Stopped listening on port 61610
+[Child 7424, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 7424, Ch[Child 428, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child [Child 94[Child 6556, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 6556, Chro[Parent 7848, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188
+1561451280848	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "disable-gpu" "user-agent=Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko" "-foreground" "-no-remote" "-profile" "C:\\Users\\student\\AppData\\Local\\Temp\\rust_mozprofile.jQhOh5zkA3Bo"
+*** You are running in headless mode.
+1561451281239	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1561451281239	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1561451282377	Marionette	INFO	Listening on port 62896
+1561451282454	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=pZXRboMgFIZfoLd7DrK9Qdul2xK7Nm7JrhFPKxU55AAzvv2wumQmm65woRfg__Ef_OGwChtg9w_EDOGZeMO4MeytQsNysOhJALtYtiPUjr1C2z9HwtILt5MKDsZJ1KuLvWO3gEZCDopH6adG1mX5ok-YSMlBgHaxpQQPsi-Fq0QbmbQuFvEhbaUS9MMWzBM2yKmcIMLoquhH_xbtueZnmKhaKBSef5fQj-8q16hgKmwu2JsW4LbTYnhH6xpoCqBo-YFKIDEXqgXAhtsaXDrBkBSQyBjzGU3ZojeoU2rZhwsnzEfrH8GglfHr98dLoE-ogBbumAX5cD7f0XG1TfJxDWZ8HkDDSaZmMuNdgocn4mV8EtbeYRNaj7hiwqXYxofSKyePaLyJR3SZrGE8X2k_NpOfoKSu53rqf7LxHHoAUvdt5gs&type=js&k=7ace95c7d4524b37c3fcb1175cb396ccf1ec313d&t=1560882826, line 3387: unreachable code after return statement
+JavaScript error: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=rZJJbhsxEEUP0NrmHFRPoriMh52ziZEDFMnqbrY4mYNl3T5sIUJkA0EgqDckgeJ__J9VZHIGSd0E4oMbAxgC3pMfYGFE8hOjy0EgmSOBeLKCeEhTcBqrd9BKQnJhM8dv5DbIed28OJA3iUtZZpH-rXn-SBgs6E-qX0lp8r1UXz0KZcuNAQTeCLn2XViPzhhnb2QMwdm0lKMIyl_FSGj8GRHlgcwO4whhyV40DRtwR7u-aWrJWMM51B30tO7bYb_rCldCX-86uR8GlGwLwGnbUbbvBO-xo4KRtm33bIdAKVCohei2PWMCeZExXm_7_z7x1yeKKkcM8dqjz1wrUU3J6GIfK4lRjZbEg7KUkeo4Lil4PlWD-kB5D6twTOm_xsscXPZKmaK-B63h5HIiHKISZ7_L4U6v4suI3BP4j7-3rMSheld4XKEn81vGcNoI5w4K1-Nh-To7boyyKzADRu-sXIl2SQxpjbwLZnSFt5qxp4eVgh7HFSAR06rDa7JOKk7Ov07K-2VG5vgb&type=js&k=2e94a4afea44af75c5b3cff4a46b59685f6f2a8d&t=1561397416, line 2156: TypeError: b.attr(...) is undefined
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+JavaScript warning: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=pZXRboMgFIZfoLd7DrK9Qdul2xK7Nm7JrhFPKxU55AAzvv2wumQmm65woRfg__Ef_OGwChtg9w_EDOGZeMO4MeytQsNysOhJALtYtiPUjr1C2z9HwtILt5MKDsZJ1KuLvWO3gEZCDopH6adG1mX5ok-YSMlBgHaxpQQPsi-Fq0QbmbQuFvEhbaUS9MMWzBM2yKmcIMLoquhH_xbtueZnmKhaKBSef5fQj-8q16hgKmwu2JsW4LbTYnhH6xpoCqBo-YFKIDEXqgXAhtsaXDrBkBSQyBjzGU3ZojeoU2rZhwsnzEfrH8GglfHr98dLoE-ogBbumAX5cD7f0XG1TfJxDWZ8HkDDSaZmMuNdgocn4mV8EtbeYRNaj7hiwqXYxofSKyePaLyJR3SZrGE8X2k_NpOfoKSu53rqf7LxHHoAUvdt5gs&type=js&k=7ace95c7d4524b37c3fcb1175cb396ccf1ec313d&t=1560882826, line 3387: unreachable code after return statement
+JavaScript error: http://joes-shop.championusa.kr/ind-script/optimizer.php?filename=rZJJbhsxEEUP0NrmHFRPoriMh52ziZEDFMnqbrY4mYNl3T5sIUJkA0EgqDckgeJ__J9VZHIGSd0E4oMbAxgC3pMfYGFE8hOjy0EgmSOBeLKCeEhTcBqrd9BKQnJhM8dv5DbIed28OJA3iUtZZpH-rXn-SBgs6E-qX0lp8r1UXz0KZcuNAQTeCLn2XViPzhhnb2QMwdm0lKMIyl_FSGj8GRHlgcwO4whhyV40DRtwR7u-aWrJWMM51B30tO7bYb_rCldCX-86uR8GlGwLwGnbUbbvBO-xo4KRtm33bIdAKVCohei2PWMCeZExXm_7_z7x1yeKKkcM8dqjz1wrUU3J6GIfK4lRjZbEg7KUkeo4Lil4PlWD-kB5D6twTOm_xsscXPZKmaK-B63h5HIiHKISZ7_L4U6v4suI3BP4j7-3rMSheld4XKEn81vGcNoI5w4K1-Nh-To7boyyKzADRu-sXIl2SQxpjbwLZnSFt5qxp4eVgh7HFSAR06rDa7JOKk7Ov07K-2VG5vgb&type=js&k=2e94a4afea44af75c5b3cff4a46b59685f6f2a8d&t=1561397416, line 2156: TypeError: b.attr(...) is undefined
+JavaScript error: http://www.fairplay142.com/shop/shopdetail.html?branduid=134279&ref=naver_open&n_media=11068&n_query=%ED%9B%84%EB%93%9C%ED%8B%B0&n_rank=8&n_ad_group=grp-a001-02-000000004352550&n_ad=nad-a001-02-000000045995270&n_campaign_type=2&n_mall_pid=134279&NaPm=ct%3Djxbjurlk%7Cci%3D0yG0002hQL5rm0V1yKXY%7Ctr%3Dpla%7Chk%3D3b1ece77c8dd9fc2bb89db3765cdc5418345b015, line 2291: TypeError: document.getElementById(...) is null
+JavaScript warning: http://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1384217780&NaPm=ct=jxbl2xvk|ci=2c0dc585642d04bd3e9447ce11347d1f0a158b3c|tr=ligh|sn=8|hk=c968d4b01dde0251efa658d933ef4ec115af226e&chl_dtl_no=2540914&chl_no=141370, line 6568: unreachable code after return statement
+JavaScript warning: http://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1384217780&NaPm=ct=jxbl2xvk|ci=2c0dc585642d04bd3e9447ce11347d1f0a158b3c|tr=ligh|sn=8|hk=c968d4b01dde0251efa658d933ef4ec115af226e&chl_dtl_no=2540914&chl_no=141370, line 6584: unreachable code after return statement
+JavaScript warning: http://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1384217780&NaPm=ct=jxbl2xvk|ci=2c0dc585642d04bd3e9447ce11347d1f0a158b3c|tr=ligh|sn=8|hk=c968d4b01dde0251efa658d933ef4ec115af226e&chl_dtl_no=2540914&chl_no=141370, line 6616: unreachable code after return statement
+JavaScript warning: http://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1384217780&NaPm=ct=jxbl2xvk|ci=2c0dc585642d04bd3e9447ce11347d1f0a158b3c|tr=ligh|sn=8|hk=c968d4b01dde0251efa658d933ef4ec115af226e&chl_dtl_no=2540914&chl_no=141370, line 6758: SyntaxError: 08 is not a legal ECMA-262 octal constant
+JavaScript warning: http://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1384217780&NaPm=ct=jxbl2xvk|ci=2c0dc585642d04bd3e9447ce11347d1f0a158b3c|tr=ligh|sn=8|hk=c968d4b01dde0251efa658d933ef4ec115af226e&chl_dtl_no=2540914&chl_no=141370, line 8918: unreachable code after return statement
+JavaScript warning: http://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=1384217780&NaPm=ct=jxbl2xvk|ci=2c0dc585642d04bd3e9447ce11347d1f0a158b3c|tr=ligh|sn=8|hk=c968d4b01dde0251efa658d933ef4ec115af226e&chl_dtl_no=2540914&chl_no=141370, line 8959: unreachable code after return statement
+JavaScript warning: http://www.wemakeprice.com/js/deal.js?20190617_1, line 99: unreachable code after return statement
+JavaScript warning: http://www.wemakeprice.com/js/deal.js?20190617_1, line 99: unreachable code after return statement
+1561453684796	Marionette	INFO	Stopped listening on port 62896
+[Parent 2760, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 4616, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 4616, C[Child 7916, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 7916, Chrome_C[Child 2444, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 2444,[Parent 2760, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188
+1561455382459	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "disable-gpu" "user-agent=Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko" "-foreground" "-no-remote" "-profile" "C:\\Users\\student\\AppData\\Local\\Temp\\rust_mozprofile.waYeSgHYGtL6"
+*** You are running in headless mode.
+1561455382827	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1561455382827	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1561455383970	Marionette	INFO	Listening on port 51946
+1561455384072	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://img.lfmall.co.kr/static/201906232300/p2/js/jquery/jquery-1.9.1.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://img.lfmall.co.kr/static/201906232300/woutlet/common/js/ui.front.js, line 234: unreachable code after return statement
+JavaScript warning: http://img.lfmall.co.kr/static/201906232300/woutlet/common/js/ui.front.js, line 324: unreachable code after return statement
+JavaScript warning: http://img.lfmall.co.kr/static/201906232300/woutlet/common/js/ui.front.js, line 234: unreachable code after return statement
+[Parent 7856, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+JavaScript warning: http://img.lfmall.co.kr/static/201906232300/p2/js/jquery/jquery-1.9.1.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery_v1.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: http://script.g9.co.kr/jquery-1.10.2.min.js?_rel=20190618154846, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+JavaScript warning: http://www.11st.co.kr/js/common/headerCommonJs.js, line 984: unreachable code after return statement
+JavaScript warning: http://www.11st.co.kr/js/common/headerCommonJs.js, line 984: unreachable code after return statement
+JavaScript warning: http://www.11st.co.kr/js/common/common.js, line 1442: unreachable code after return statement
+JavaScript warning: http://www.11st.co.kr/js/common/common.js, line 1442: unreachable code after return statement
+JavaScript warning: http://www.11st.co.kr/js/_merge/template/common.login.js, line 1419: unreachable code after return statement
+JavaScript warning: http://www.11st.co.kr/js/_merge/template/common.login.js, line 1419: unreachable code after return statement
+Invalid SOS parameters for sequential JPEG
+Invalid SOS parameters for sequential JPEG
+Invalid SOS parameters for sequential JPEG
+1561458426202	Marionette	INFO	Stopped listening on port 51946
+[Child 9136, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346[
+Child 28[Child 9136, Chr60, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 2860, Chrome_ChildThread] W[Parent 7856, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 78[Parent 7856, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Chil[Parent 7856, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188

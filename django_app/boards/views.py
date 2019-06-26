@@ -45,7 +45,7 @@ def service(request):
 def manage(request):
     query = request.GET.get('query')
     browser = browser_on()
-    title_list, href_list, src_list, price_list = href_crawler(browser, query, 1)
+    title_list, href_list, src_list, price_list = href_crawler(browser, query, 2)
 
     # 데이터베이스에 저장
     for (title, thumbnail, link, price) in zip(title_list, src_list, href_list, price_list):
@@ -68,7 +68,7 @@ def manage(request):
             hex_dig = hash_object.hexdigest()
             filename = f"/boards/static/boards/images/screenshot/{hex_dig}_{post.id}.jpg"
             # saves screenshot, no return
-            image_scrapping(href, filename)
+            image_scrapping(href, filename, browser)
             img = crop_col_img(filename)
             split_imgs = split_img(img)
             split_imgs = img_concat(split_imgs)
@@ -118,7 +118,9 @@ def extract(request, post_pk):
     hex_dig = hash_object.hexdigest()
     filename = f"/boards/static/boards/images/screenshot/{hex_dig}_{post.id}.jpg"
     # saves screenshot, no return
-    image_scrapping(href, filename)
+    browser = browser_on()
+    image_scrapping(href, filename, browser)
+    browser.quit()
     img = crop_col_img(filename)
     split_imgs = split_img(img)
     split_imgs = img_concat(split_imgs)
